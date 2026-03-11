@@ -1,0 +1,26 @@
+name: gap_map_prototype
+description: Prototype carte Gap (patou, orage, POI)
+version: 0.1.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  flutter_map: ^7.0.0
+  latlong2: ^0.9.1
+  geolocator: ^10.1.1
+  http: ^1.5.0
+  just_audio: ^0.9.42
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/icons/patou.png
+    - assets/icons/chasse.png
+    - assets/icons/travaux.png
+    - assets/icons/orage.png
+    - assets/sounds/patou_alert.wav
