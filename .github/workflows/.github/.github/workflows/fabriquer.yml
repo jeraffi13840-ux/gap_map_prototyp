@@ -1,0 +1,26 @@
+name: Build Debug APK
+on: [push, workflow_dispatch]
+
+jobs:
+  fabrication:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Recupere le code
+        uses: actions/checkout@v4
+
+      - name: Installe Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+
+      - name: Prepare les dossiers
+        run: flutter pub get
+
+      - name: Cree l APK
+        run: flutter build apk --debug
+
+      - name: Envoie l APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: mon-application-samsung
+          path: build/app/outputs/flutter-apk/app-debug.apk
